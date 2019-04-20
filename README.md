@@ -1,6 +1,13 @@
 # `Git`ing Started!
 
-We will follow a very simple procedure to maintain our repository. Originally the repository had only one branch: `master`. We would like to keep this branch as stable, bug-free and ready to use. That means we will develop our code on a separate branch and once the code is bug-free, tested and ready, we will merge that into `master` branch.
+We will follow a very simple procedure to maintain our repository. 
+
+Open a terminal and go to a desired location to download the repository using:
+```
+git clone https://github.com/anikde/Combined-project.git
+```
+
+Originally the repository had only one branch: `master`. We would like to keep this branch as stable, bug-free and ready to use. That means we will develop our code on a separate branch and once the code is bug-free, tested and ready, we will merge that into `master` branch.
 
 I created a new branch named `basics`. To see all branches, go to the project root directory (on terminal) and use:
 ```
