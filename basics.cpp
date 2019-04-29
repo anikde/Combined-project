@@ -6,7 +6,8 @@ float addByValue(float x, float y){
     return z;
 }
 
-void addByReference(float x, float y, float * const result){
-    *res = x+y;
-    return *res;
-}
+float addByReference(float x, float y, float * result){
+   
+    *result = x + y ;
+    return *result ;
+}	
