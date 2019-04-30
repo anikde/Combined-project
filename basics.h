@@ -17,7 +17,7 @@ float addByValue(float x, float y);
  * @param[in] y second real number
  * @param[out] result sum of the given numbers
  */
-void addByReference(float x, float y, float * result);
+void addByReference(float x, float y, float * const result);
 
 
 #endif // SIMPLECODES_BASICS_H
