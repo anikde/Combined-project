@@ -7,6 +7,12 @@
 # and dependencies on other softwares etc.
 # Cmake helps to keep this process neat and easy
 
+```
+cd ..
+git fetch --all
+git checkout feature/matrixOperations
+```
+
 cmake_minimum_required(VERSION 2.8) # checks for version of CMake installed on the system
 project( SimpleCodes ) # set a project name
 
@@ -20,36 +26,43 @@ message("Value of EXE_NAME is: " ${EXE_NAME}) # prints the content of a variable
 
 # list the places to find header files
 include_directories(
-        ${PROJECT_SOURCE_DIR}
+		${PROJECT_SOURCE_DIR}
 )
 message("Lets see what is the value of PROJECT_SOURCE_DIR -> " ${PROJECT_SOURCE_DIR})
 
 # default include directories are automatically added
 # The list of default include directories can be seen by running the command (in terminal): echo | g++ -E -Wp,-v -  # don't forget the last minus sign
 
+add_library(
+	matrixOperations
+	matrixOperations.h
+	matrixOperations.cpp
+)
+
 # set name of executable followed by the source file(s) which needs to be compiled
 add_executable(
-        ${EXE_NAME}
-        myMain.cpp
-        basics.h
-        basics.cpp
+		${EXE_NAME}
+		myMain.cpp
+		basics.h
+		basics.cpp
 )
 # for one executable there can be ONLY one main function across all its source files
 
 # set some standard properties for the compiler
 set_target_properties(
-        ${EXE_NAME}
-        PROPERTIES
-        POSITION_INDEPENDENT_CODE ON
-        CXX_STANDARD 11 # use C++11 
-        CXX_STANDARD_REQUIRED YES
-        CXX_EXTENSIONS NO
+		${EXE_NAME}
+		PROPERTIES
+		POSITION_INDEPENDENT_CODE ON
+		CXX_STANDARD 11 # use C++11 
+		CXX_STANDARD_REQUIRED YES
+		CXX_EXTENSIONS NO
 )
 
 target_link_libraries(
-        ${EXE_NAME}
-        # the libraries to link will go here
-        # for now we don't have any libraries to link
+		${EXE_NAME}
+		matrixOperations
+		# the libraries to link will go here
+		# for now we don't have any libraries to link
 )
 
 
@@ -60,7 +73,7 @@ set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
 set(CMAKE_DISABLE_SOURCE_CHANGES  ON)
 
 if ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
-    message(SEND_ERROR "In-source builds are not allowed.")
+	message(SEND_ERROR "In-source builds are not allowed.")
 endif ()
 
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)

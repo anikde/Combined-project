@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "basics.h"
+#include "matrixOperations.h"
 
 int main(int argc, char** argv){
 
@@ -14,6 +15,19 @@ int main(int argc, char** argv){
         float res;
         addByReference(p, q, &res);
         printf("Test: add by reference: %.3f\n", res);
+    }
+
+    {
+        double A[2][3] = {
+                        {1,2,3},
+                        {4,5,6}
+                        };
+
+        // double A[] = {1,2,3,4,5,6,7};
+
+        mat::displayMatrix(2, 3, (double *)A, mat::StorageOrder::ROW_MAJOR);
+        mat::displayMatrix(3, 2, (double *)A, mat::StorageOrder::COLUMN_MAJOR);
+
     }
 
     return 0;
