@@ -7,12 +7,6 @@
 # and dependencies on other softwares etc.
 # Cmake helps to keep this process neat and easy
 
-```
-cd ..
-git fetch --all
-git checkout feature/matrixOperations
-```
-
 cmake_minimum_required(VERSION 2.8) # checks for version of CMake installed on the system
 project( SimpleCodes ) # set a project name
 
