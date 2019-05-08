@@ -48,10 +48,20 @@ message("Lets see what is the value of PROJECT_SOURCE_DIR -> " ${PROJECT_SOURCE_
 # default include directories are automatically added
 # The list of default include directories can be seen by running the command (in terminal): echo | g++ -E -Wp,-v -  # don't forget the last minus sign
 
+# Create a library
 add_library(
-	matrixOperations
+	matrixOperations STATIC
 	matrixOperations.h
 	matrixOperations.cpp
+)
+
+set_target_properties(
+		matrixOperations
+		PROPERTIES
+		POSITION_INDEPENDENT_CODE ON
+		CXX_STANDARD 11 # use C++11 
+		CXX_STANDARD_REQUIRED YES
+		CXX_EXTENSIONS NO
 )
 
 # set name of executable followed by the source file(s) which needs to be compiled
