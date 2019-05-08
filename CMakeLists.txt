@@ -8,6 +8,20 @@
 # Cmake helps to keep this process neat and easy
 
 cmake_minimum_required(VERSION 2.8) # checks for version of CMake installed on the system
+
+# Disable insource build - to keep source neat
+set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
+set(CMAKE_DISABLE_SOURCE_CHANGES  ON)
+
+if ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
+	message(SEND_ERROR "In-source builds are not allowed.")
+endif ()
+
+set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+
+
 project( SimpleCodes ) # set a project name
 
 # define a new variable EXE_NAME and store a string in it. That we will use as name for the executable file we will create after compilation.  
@@ -17,6 +31,13 @@ set(EXE_NAME "${PROJECT_NAME}-bin")
 # list of all cmake variables: https://cmake.org/cmake/help/v3.0/manual/cmake-variables.7.html
 
 message("Value of EXE_NAME is: " ${EXE_NAME}) # prints the content of a variable (or any text)
+
+# Set compiler options to extend capabilities for error reportings
+if(MSVC)
+	add_compile_options(/W4)
+else()
+	add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
 
 # list the places to find header files
 include_directories(
@@ -58,19 +79,3 @@ target_link_libraries(
 		# the libraries to link will go here
 		# for now we don't have any libraries to link
 )
-
-
-# Some more (optional) settings 
-
-# Disable insource build - to keep source neat
-set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
-set(CMAKE_DISABLE_SOURCE_CHANGES  ON)
-
-if ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
-	message(SEND_ERROR "In-source builds are not allowed.")
-endif ()
-
-set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
-set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
-set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
-

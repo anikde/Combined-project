@@ -1,0 +1,17 @@
+# Basic reference: https://www.codeproject.com/Articles/1084565/Cplusplus-Continuous-Integration-Setup
+dist: xenial
+sudo: false
+language: cpp
+compiler: gcc
+
+script:
+	- mkdir build
+	- cd build
+	- cmake ..
+	- cmake --build . --config Release -- -j2
+
+after_success:
+  - echo "Success"
+ 
+after_failure:
+  - echo "Failed"
