@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+//void matrixfunctions(unsigned int r, unsigned int c, double *mat1);
+
 namespace mat {
 
 	// labels matrix data order
@@ -14,5 +16,6 @@ namespace mat {
 	 * @param order 
 	 */
 	void displayMatrix(unsigned int rows, unsigned int cols, double *data, mat::StorageOrder order = StorageOrder::ROW_MAJOR);
+
 
 }

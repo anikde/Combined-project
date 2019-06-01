@@ -19,5 +19,14 @@ float addByValue(float x, float y);
  */
 void addByReference(float x, float y, float * const result);
 
+/**
+ * Enter the values for rows and columns
+ * Enter the values of the matrix
+ * Enter the scaler value
+ * Print the output matrix
+ */
+
+int matrixScalarMultiplier(int rows, int cols, int *dataIn[rows][cols], int *dataOut[rows][cols]);
+
 
 #endif // SIMPLECODES_BASICS_H

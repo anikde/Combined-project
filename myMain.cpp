@@ -28,6 +28,9 @@ int main(int argc, char** argv){
         mat::displayMatrix(2, 3, (double *)A, mat::StorageOrder::ROW_MAJOR);
         mat::displayMatrix(3, 2, (double *)A, mat::StorageOrder::COLUMN_MAJOR);
 
+        int matrixScalarMultiplier(int rows, int cols, int *dataIn[rows][cols], int *dataOut[rows][cols]);
+	
+
     }
 
     return 0;
