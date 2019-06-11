@@ -23,35 +23,42 @@ void mat::displayMatrix(unsigned int rows, unsigned int cols, double *data, mat:
 
 }
 
-int matrixScalarMultiplier(int rows, int cols, int *dataIn[rows][cols], int *dataOut[rows][cols]){
+int matrixScalarMultiplier(int rows, int cols, int *dataIn, int *dataOut){
 
 	int i, j, s;
-	printf ("Enter the number of rows and columns:");
-	scanf ("%d%d",&rows,&cols);
+	
 
 	for (i=0;i<rows;i++)
 	{
 		for (j=0;j<cols;j++)
 		{
-			scanf ("%d", &dataIn[rows][cols])
+			scanf ("%d", dataIn[i][j] );
 		}
 	}
 
-	printf ("Enter the Scaler number to be Multiplied");
-	scanf ("%d",&s);
+	
 
-	*dataOut[][]= (s) * (*dataIn[][]);
 
 	for (i=0;i<rows;i++)
 	{
 		for (j=0;j<cols;j++)
 		{
-			printf("%d", dataOut[rows][cols]);
+			dataOut[i][j] = s* dataIn[i][j];
+		}
+	}
+	
+
+	for (i=0;i<rows;i++)
+	{
+		for (j=0;j<cols;j++)
+		{
+			printf("%d", *dataOut[i][j]);
 			
 		}
 		printf ("/n");
 	}
 
 }
+
 
 
