@@ -26,7 +26,7 @@ void addByReference(float x, float y, float * const result);
  * Print the output matrix
  */
 
-int matrixScalarMultiplier(int rows, int cols, int *dataIn[rows][cols], int *dataOut[rows][cols]);
+int matrixScalarMultiplier(int rows, int cols, int *dataIn, int *dataOut);
 
 
 #endif // SIMPLECODES_BASICS_H

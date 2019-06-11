@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-//void matrixfunctions(unsigned int r, unsigned int c, double *mat1);
+
 
 namespace mat {
 

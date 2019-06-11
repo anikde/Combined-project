@@ -28,7 +28,17 @@ int main(int argc, char** argv){
         mat::displayMatrix(2, 3, (double *)A, mat::StorageOrder::ROW_MAJOR);
         mat::displayMatrix(3, 2, (double *)A, mat::StorageOrder::COLUMN_MAJOR);
 
-        int matrixScalarMultiplier(int rows, int cols, int *dataIn[rows][cols], int *dataOut[rows][cols]);
+    }
+
+    {
+
+        printf ("Enter the number of rows and columns:");
+	    scanf ("%d%d",&rows,&cols);
+
+        printf ("Enter the Scaler number to be Multiplied");
+	    scanf ("%d",&s); 
+
+        int matrixScalarMultiplier(int rows, int cols, int dataIn[rows][cols], int dataOut[rows][cols]);
 	
 
     }

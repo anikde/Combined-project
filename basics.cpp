@@ -1,9 +1,7 @@
 #include "basics.h"
 
 float addByValue(float x, float y){
-	float z; 
-	z=x+y;
-	return z;
+	return x+y;
 }
 
 void addByReference(float x, float y, float * const result){
