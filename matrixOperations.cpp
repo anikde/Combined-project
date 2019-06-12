@@ -1,4 +1,5 @@
 #include "matrixOperations.h"
+#include "basics.h"
 
 void mat::displayMatrix(unsigned int rows, unsigned int cols, double *data, mat::StorageOrder order){
 	
@@ -23,48 +24,32 @@ void mat::displayMatrix(unsigned int rows, unsigned int cols, double *data, mat:
 
 }
 
-int matrixScalarMultiplier(int rows, int cols, int *dataIn, int *dataOut){
+void matrixScalerMultiplier(int rows, int cols, int s, int *dataIn ){
 
-	int i, j, s;
+	int i,j;
 	
-	scanf ("%d%d",&rows,&cols); // I need to scan the values of rows and cols under the scope of this function only i guess
-	scanf ("%d",&s); // i cant scan these value from the main function nah??
-
-	/*
-	this loop the input matrix from the user after taking the number of rows and columns
-	 */
-	for (i=0;i<rows;i++)
-	{
-		for (j=0;j<cols;j++)
-		{
-			scanf ("%d", dataIn[i][j] );
-		}
-	}
-
-	/* Here each os the element of the input matrix
-	 is multiplied with a Scaler value
+	/*matrix is multiplied with a Scaler value
+	also the output matrix will be printed in this loop
 	*/
 
 	for (i=0;i<rows;i++)
 	{
 		for (j=0;j<cols;j++)
 		{
-			dataOut[i][j] = s* dataIn[i][j];
-		}
-	}
-	
-	/* The output matrix will be printed using this loop*/
-	for (i=0;i<rows;i++)
-	{
-		for (j=0;j<cols;j++)
-		{
-			printf("%d", *dataOut[i][j]);
+			*(dataIn+i*rows+j) = s * (*(dataIn+i*rows+j));
+		
+
+			printf("%d", *(dataIn+i*rows+j));
 			
 		}
 		printf ("/n");
+		
 	}
-
+	
 }
+	
+
+
 
 
 

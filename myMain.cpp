@@ -46,10 +46,15 @@ int main(int argc, char** argv){
 
     {
        
-        printf ("Enter the number of rows and columns:");
-	    printf ("Enter the Scaler number to be Multiplied");
+        int array[3][3]={1,2,3,4,5,6,7,8,9};
+		//int *dataIn = &array[0][0]; 
+		//int rows=3; 
+		//int cols=3;
+		//int dataOut [3][3];
+		//int scaler=2;
+
 	    
-        int matrixScalarMultiplier(int rows, int cols, int dataIn[rows][cols], int dataOut[rows][cols]);
+        void matrixScalerMultiplier( 3, 3, 2, &array);
 	
 
     }

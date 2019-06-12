@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-
+void matrixScalerMultiplier(int rows, int cols,int scaler, int *dataIn);
 namespace mat {
 
 	// labels for matrix data order
@@ -16,5 +16,6 @@ namespace mat {
 	 * @param order storage order - row major (default) or column major 
 	 */
 	void displayMatrix(unsigned int rows, unsigned int cols, double *data, mat::StorageOrder order = mat::StorageOrder::ROW_MAJOR);
+	
 
 }
