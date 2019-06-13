@@ -24,7 +24,7 @@ void mat::displayMatrix(unsigned int rows, unsigned int cols, double *data, mat:
 
 }
 
-void matrixScalerMultiplier(int rows, int cols, int s, int *dataIn ){
+void matrixScalerMultiplier(int rows, int cols, int s, double *dataIn ){
 
 	int i,j;
 	
@@ -39,10 +39,10 @@ void matrixScalerMultiplier(int rows, int cols, int s, int *dataIn ){
 			*(dataIn+i*rows+j) = s * (*(dataIn+i*rows+j));
 		
 
-			printf("%d", *(dataIn+i*rows+j));
+			printf("%0.3f\t", *(dataIn+i*rows+j));
 			
 		}
-		printf ("/n");
+		printf ("\n");
 		
 	}
 	

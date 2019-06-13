@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-void matrixScalerMultiplier(int rows, int cols,int scaler, int *dataIn);
+void matrixScalerMultiplier(int rows, int cols,int scaler, double *dataIn);
 namespace mat {
 
 	// labels for matrix data order
