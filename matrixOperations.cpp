@@ -18,7 +18,7 @@ void mat::displayMatrix(unsigned int rows, unsigned int cols, double *data, mat:
 			for(unsigned int i=j; i < rows*cols; i+=rows){
 				fprintf(stdout, "%.3f ", data[i]);
 			}
-			fprintf(stdout, "\n");
+		fprintf(stdout, "\n");
 		}
 	}
 
@@ -37,8 +37,6 @@ void matrixScalerMultiplier(int rows, int cols, int s, double *dataIn ){
 		for (j=0;j<cols;j++)
 		{
 			*(dataIn+i*rows+j) = s * (*(dataIn+i*rows+j));
-		
-
 			printf("%0.3f\t", *(dataIn+i*rows+j));
 			
 		}
@@ -46,6 +44,17 @@ void matrixScalerMultiplier(int rows, int cols, int s, double *dataIn ){
 		
 	}
 	
+}
+
+void mat::ScalerMultiplierMatrix (unsigned int r,  unsigned int c, unsigned int s, double *mat, mat::StorageOrder order ){
+
+	if(order == mat::StorageOrder::ROW_MAJOR){
+		for (unsigned int i=0;i < r*c ;i++){
+			fprintf(stdout,"%0.3f ", (s)*(mat[i]));
+			if((i+1) % c == 0) fprintf (stdout,"\n"); 
+		}
+		return;
+	}
 }
 	
 

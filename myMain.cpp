@@ -45,19 +45,14 @@ int main(int argc, char** argv){
 	}
 
     {
-       
-        double array[3][3]={1,2,3,4,5,6,7,8,9};
-		//int *dataIn = &array[0][0]; 
-		//int rows=3; 
-		//int cols=3;
-		//int dataOut [3][3];
-		//int scaler=2;
-
-	    
-        matrixScalerMultiplier( 3, 3, 2, *array);
+    	double array[3][3]={1,2,3,4,5,6,7,8,9};
+		matrixScalerMultiplier( 3, 3, 2, *array);
 	 
-
     }
+	{
+		double K[] = {1,2,3,4,5,6};
+		mat::ScalerMultiplierMatrix(2, 3, 2, (double *)K, mat::StorageOrder::ROW_MAJOR);
+	}
 
 	return 0;
 }
