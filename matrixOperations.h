@@ -16,6 +16,16 @@ namespace mat {
 	 * @param order storage order - row major (default) or column major 
 	 */
 	void displayMatrix(unsigned int rows, unsigned int cols, double *data, mat::StorageOrder order = mat::StorageOrder::ROW_MAJOR);
-	void ScalerMultiplierMatrix(unsigned int , unsigned int, unsigned int , double * , mat::StorageOrder order = mat ::StorageOrder::ROW_MAJOR ); 
+
+	/* 
+	 * @displays a matrix multiplied with a scaler number 
+	 * @param r as rows
+	 * @param c as columns
+	 * @param s as scaler value 
+	 * @param mat pointing towards the first element of double array
+	 * @param order storage order- row major 
+	 */
+
+	void ScalerMultiplierMatrix(unsigned int , unsigned int, unsigned int , double * , mat::StorageOrder order = mat ::StorageOrder::ROW_MAJOR );  
 
 }
