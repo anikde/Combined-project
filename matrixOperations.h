@@ -26,6 +26,27 @@ namespace mat {
 	 * @param order storage order- row major 
 	 */
 
-	void ScalerMultiplierMatrix(unsigned int , unsigned int, unsigned int , double * , mat::StorageOrder order = mat ::StorageOrder::ROW_MAJOR );  
+	void ScalerMultiplierMatrix(unsigned int , unsigned int, unsigned int , double * , mat::StorageOrder order = mat ::StorageOrder::ROW_MAJOR ); 
+
+	/*
+	 *This will function will add two input matrices and display as well
+	 *parameters are rows and columns of both the matrix
+	 *param data pointer to the first element of first double array
+	 *param data pointer to the first element of second double array
+	 *param order storage order as ROW_MAJOR 
+	 */ 
+
+	void MatrixAddition(unsigned int, unsigned int , double * , double * , mat::StorageOrder order = mat::StorageOrder::ROW_MAJOR);
+
+	/*
+	 *This function does the job of multiplying two input matrices and displays it on the screen in row major format
+	 *parameters are rows ans columns of both the matrix
+	 *param data pointer to the first element of first double array
+	 *param data pointer to the first element of second double array
+	 *param order storage order as ROW_MAJOR 
+	
+	*/
+
+	void MatrixMultiplication(unsigned int, unsigned int , double * , double * , mat::StorageOrder order = mat::StorageOrder::ROW_MAJOR);
 
 }

@@ -56,9 +56,29 @@ void mat::ScalerMultiplierMatrix (unsigned int r,  unsigned int c, unsigned int 
 		return;
 	}
 }
+
+void mat::MatrixAddition (unsigned int rows, unsigned int cols, double *mat, double *mat2, mat::StorageOrder order){
+	if (order == mat::StorageOrder::ROW_MAJOR){
+		for (unsigned int i=0;i<rows*cols; i++){
+			mat[i]= mat[i] + mat2[i];
+			fprintf(stdout,"%0.3f ", mat[i]);
+			if((i+1) % cols == 0) fprintf (stdout,"\n");
+		}
+		return;
+	}
+}
+
+void mat::MatrixMultiplication(unsigned int rows, unsigned int cols, double *mat1, double *mat2, mat::StorageOrder order){
 	
-
-
+	if(order == mat::StorageOrder::ROW_MAJOR){
+		for(unsigned int i=0; i<rows*cols; i++){
+			mat1[i] = mat1[i] * mat2[i];
+			fprintf(stdout,"%0.3f ",mat1[i]);
+			if ((i+1) % cols == 0) fprintf(stdout,"\n");
+		}
+		return;
+	}
+}
 
 
 
